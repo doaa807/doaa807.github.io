@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scorpion</title>
+    <link rel="icon" href="{% static 'imgs/icon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,400;1,800&display=swap">
+
+    <body>
+
+
+        <!-- stat-langing-page -->
+        {% comment %} <div class="landing-page " style="background-image: url({% static 'imgs/me/12.JPG' %});"> {% endcomment %}
+            <div class="overlay "></div>
+            <div class="container">
+                <div class="header-area ">
+                    <a href="index.html" class="logo ">Special-Design</a>
+                </div>
+            </div>
+            <div class="introduction-text ">
+                <h1>" Fares <span style="font-size: 80px;font-family: cursive;">Scorpion</span> emad "</h1>
+                <p>Faris Emad is a student in the College of Computers and Information. I live in Mansoura, Dakahlia Governorate. My dream is to be an engineer in the Information Technology.</p>
+            </div>
+        </div>
+        <!-- end-langing-page -->
+
+        <!-- Start TimeLine -->
+        <div class="timeline">
+            <div class="container">
+                <div class="timeline-content">
+                    <div class="year">2020</div>
+                    <div class="left">
+                        <div class="content">
+                            <h3>My programming experience</h3>
+                            <p>It was a very nice experience, and literally whoever learns programming can solve any problem he meets in his life and deal with it very well.<br>
+                                <center><img src="{% static 'imgs/proglang.png' %}" style="width: 96px;"></center>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="right">
+                        <div class="content">
+                            <h3>C#</h3>
+                            <p>When I tried to learn the programming language, C Sharp, but I was forced to do that in my college studies, but I did not like it very much because I did not understand it from the doctors and lecturers.<br>
+                                <center><img src="{% static 'imgs/csharp.png' %}" style="width: 96px;"></center>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="left">
+                        <div class="content">
+                            <h3>Python-3</h3>
+                            <p>My experience in learning Python programming language was very great because it is an easy and fast language to understand, and learning it was one of the most easy things I have done in my life.<br>
+                                <center><img src="{% static 'imgs/python.png' %}" style="width: 96px;"></center>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End TimeLine -->
+        <!-- Start Features -->
+        <div class="features">
+            <h2>Our Features</h2>
+            <div class="container">
+                <div class="feat-box">
+                    <a href="https://www.twitter.com/faresemadx/" target="_blank"><img src="{% static 'imgs/twitter.png' %}" alt=""></a>
+                    <h4>Twitter</h4>
+                    <p>The personal account on Twitter is : <span>faresemadx</span></p>
+                </div>
+                <div class="feat-box">
+                    <a href="https://www.instagram.com/faresemadx/" target="_blank"><img src="{% static 'imgs/insta2.png' %}" alt=""></a>
+                    <h4>Instagram</h4>
+                    <p>The personal account on Instagram is : <span>faresemadx</span></p>
+                </div>
+                <div class="feat-box">
+                    <a href="https://www.facebook.com/faresemadx/" target="_blank"><img src="{% static 'imgs/facebook.png' %}" alt=""></a>
+                    <h4>Fcebook</h4>
+                    <p>The personal account on Facebook is : faresemadx</p>
+                </div>
+                <div class="feat-box">
+                    <a href="https://t.me/faresemadx" target="_blank"><img src="{% static 'imgs/telegram.png' %}" alt=""></a>
+                    <h4>Telegram</h4>
+                    <p>The UserName on Telegram is : <span>faresemadx</span></p>
+                </div>
+                <div class="feat-box">
+                    <a href="https://chat.whatsapp.com/+201281323602" target="_blank"><img src="{% static 'imgs/whatsapp.png' %}" alt=""></a>
+                    <h4>WhatsApp</h4>
+                    <p>To talk to me please send me a message on WhatsApp</p>
+                </div>
+                <div class="feat-box">
+                    <a href="https://soundcloud.com/faresemadx?ref=clipboard" target="_blank"><img src="{% static 'imgs/sound1.png' %}" alt=""></a>
+                    <h4>Sound-Cloud</h4>
+                    <p>The best singers I've ever heard are Dj-Atwa</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- End Features -->
+        <!-- Start Testimonials -->
+        <!-- <div class="testimonials">
+            <div class="container">
+                <h2 style="font-family:cursive;">Friends</h2>
+                <div class="ts-box">
+                    <p>Iam very habby with the product its amazing and i recieve it very fast </p>
+                    <div class="person-info">
+                        <img src="https://placehold.it/80/#DDD" alt="">
+                        <h4>Fares Emad</h4>
+                        <p>Programming</p>
+                    </div>
+                </div>
+                <div class="ts-box">
+                    <p>Iam very habby with the product its amazing and i recieve it very fast </p>
+                    <div class="person-info">
+                        <img src="https://placehold.it/80/#EEE" alt="">
+                        <h4>Mahmoud Eweda</h4>
+                        <p>Penetrasion Tester</p>
+                    </div>
+                </div>
+                <div class="ts-box">
+                    <p>Iam very habby with the product its amazing and i recieve it very fast </p>
+                    <div class="person-info">
+                        <img src="https://placehold.it/80/#AAA" alt="">
+                        <h4>Eslam Hassan</h4>
+                        <p>Markiting</p>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div> -->
+        <!-- End Testimonials -->
+        <!-- Start Footer -->
+        <div class="footer">Created With Love By Fares Emad</div>
+        <!-- End Footer -->
+        <script src="{% static 'js/master-contact.js' %}"></script>
+    </body>
+
+</html>

@@ -1,0 +1,231 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="icon" href="{% static 'imgs/icon.png' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,400;1,800&display=swap">
+
+    <body>
+        <!-- star-setting-box -->
+        <div class="settings-box">
+            <div class="toggle-settings">
+                <i class="fa fa-gear"></i>
+            </div>
+            <div class="settings-container">
+                <div class="option-box">
+                    <h4>Colors</h4>
+                    <ul class="colors-list">
+                        <li class="active" data-color="#FF9800"></li>
+                        <li data-color="#E91E63"></li>
+                        <li data-color="#ad6f0b"></li>
+                        <li data-color="#151374"></li>
+                        <li data-color="#460606"></li>
+                    </ul>
+                </div>
+                <div class="option-box">
+                    <h4>Random Backgrounds</h4>
+                    <div class="random-backgrounds">
+                        <span class="yes active" data-background="yes">Yes</span>
+                        <span class="no" data-background="no">No</span>
+                    </div>
+                </div>
+                <div class="option-box">
+                    <h4>Show Bullets</h4>
+                    <div class="bullets-option">
+                        <span class="yes active" data-display="show">Yes</span>
+                        <span class="no" data-display="hide">No</span>
+                    </div>
+                </div>
+                <button class="reset-options">Reset Options</button>
+            </div>
+        </div>
+        <!-- end-setting-box -->
+        <!-- Start Nav Bullets -->
+        <div class="nav-bullets">
+            <div class="bullet" data-section=".header-area">
+                <div class="tooltip">First Page</div>
+            </div>
+            <div class="bullet" data-section=".about-us">
+                <div class="tooltip">About Us‍</div>
+            </div>
+            <div class="bullet" data-section=".skills">
+                <div class="tooltip">Our Skills</div>
+            </div>
+            <div class="bullet" data-section=".gallary">
+                <div class="tooltip">Our Gallary</div>
+            </div>
+            <div class="bullet" data-section=".timeline">
+                <div class="tooltip">Time-Line</div>
+            </div>
+            <div class="bullet" data-section=".features">
+                <div class="tooltip">Feature</div>
+            </div>
+            <div class="bullet" data-section=".testimonials">
+                <div class="tooltip">Test-Imonials</div>
+            </div>
+        </div>
+        <!-- End Nav Bullets -->
+
+        <!-- stat-langing-page -->
+        <div class="landing-page">
+            <div class="overlay "></div>
+            <div class="container">
+                <div class="header-area ">
+                    <a href="{% url 'index' %}" class="logo">Portfolio</a>
+                    {% comment %} <div class="links-container">
+                        <ul class="links ">
+                            <li><a href="#" class="active ">Abount</a></li>
+                            <li><a href="# " class=" ">Service</a></li>
+                            <li><a href="# " class=" ">Product</a></li>
+                            <li><a href="contact.html" class=" ">Contact</a></li>
+                        </ul>
+                        <div class="toggle-menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+            <div class="introduction-text ">
+                <img src="{{user.image.url}}" style="height:350px; border-radius: 5%; border: 5px solid var(--main-color);">
+                <h1>"{{user.first_name}} <span style="font-size: 50px;font-family: cursive;">{{user.job_title}}</span> Emad"</h1>
+                <p>{{user.about}}</p>
+            </div>
+        </div>
+        <!-- end-langing-page -->
+        <!-- Start About Us‍ -->
+        <div class="container">
+            <div class="about-us">
+                <div class="info-box">
+                    <h2>About Me</h2>
+                    <p>{{user.about}}</p>
+                </div>
+                <div class="image-box">
+                    <img src="{% static 'imgs/about-us.jfif' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- End About uU‍ -->
+        <!-- Start our Skilld -->
+        <div class="skills">
+            <div class="container">
+                <h2>Our Skills</h2>
+                {% for skill in skills %}
+                <div class="skill-box">
+                    <div class="skill-name">{{skill.title}}</div>
+                    <div class="skill-progress">
+                        <span data-progress="{{skill.progress}}%"></span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div> 
+        
+        <!-- End our Skilld -->
+        <!-- Start Gallary -->
+        <div class="gallary">
+            <div class="container">
+                <h2>Our Gallary</h2>
+                <div class="images-box">
+                    {% for photo in gallary %}
+                        <img src="{{photo.image.url}}" alt="{{photo.title}}">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- End Gallary -->
+        <!-- Start TimeLine -->
+        <div class="timeline">
+            <div class="container">
+                <div class="timeline-content">
+                    <div class="year">2023</div>
+                    {% for project in projects %}
+                        {% if forloop.counter|divisibleby:2 %}
+                            <div class="clearfix"></div>
+                            <div class="left">
+                            <div class="content">
+                                <h3>{{ project.title }}</h3>
+                                <p>{{ project.description }}</p>
+                            </div>
+                            </div>
+                        {% else %}
+                        <div class="clearfix"></div>
+                            <div class="right">
+                            <div class="content">
+                                <h3>{{ project.title }}</h3>
+                                <p>{{ project.description }}</p>
+                            </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- End TimeLine -->
+        <!-- Start Features -->
+        <div class="features">
+            <h2>Our Features</h2>
+            <div class="container">
+                {% for account in social_media_accounts %}
+                <div class="feat-box">
+                    <img src="{{account.icon.url}}" alt="">
+                    <a href="{{account.url}}" target="_blank"><h4>{{account.title}}</h4></a>
+                </div>
+                {% endfor %}
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- End Features -->
+        <!-- Start Testimonials -->
+        <div class="testimonials">
+            <div class="container">
+                <h2>Certificates</h2>
+                {% for certificate in certificates %}
+                <div class="ts-box">
+                    <div class="person-info">
+                        <h4>{{certificate.title}}</h4>
+                        <a href="{{ certificate.file.url }}" target="_blank">Download</a>
+                    </div>
+                    <p>{{certificate.description}}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <!-- End Testimonials -->
+        <!-- Start Contact Us -->
+        <div class="contact">
+            <div class="overlay"></div>
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form action="">
+                    <div class="left">
+                        <input type="text" placeholder="Your Name" name="username">
+                        <input type="text" placeholder="Your Phone" name="phone">
+                        <input type="email" placeholder="Your Email" name="email">
+                        <input type="text" placeholder="Subject" name="subject">
+                    </div>
+                    <div class="right">
+                        <textarea name="message" placeholder="Your Message"></textarea>
+                        <input type="submit" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- End Contact Us -->
+        <!-- Start Footer -->
+        <div class="footer">Created With Love By Fares Emad</div>
+        <!-- End Footer -->
+        <script src="{% static 'js/master.js' %}"></script>
+    </body>
+
+</html>
